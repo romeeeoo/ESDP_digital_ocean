@@ -1,9 +1,9 @@
-name: esdp
+name: ESDP_digital_ocean
 
 services:
   - name: server
     github:
-      repo: UralbekXD/esdp
+      repo: romeeeoo/ESDP_digital_ocean
       branch: main
       deploy_on_push: true
     run_command: python manage.py runserver 0.0.0.0:8080
@@ -13,7 +13,7 @@ jobs:
   - name: migrate
     kind: PRE_DEPLOY
     github:
-      repo: UralbekXD/esdp
+      repo: romeeeoo/ESDP_digital_ocean
       branch: main
       deploy_on_push: true
     run_command: python manage.py migrate
