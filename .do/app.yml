@@ -1,0 +1,19 @@
+name: esdp
+
+services:
+  - name: server
+    github:
+      repo: UralbekXD/esdp
+      branch: main
+      deploy_on_push: true
+    run_command: python manage.py runserver 0.0.0.0:8080
+    http_port: 8000
+
+jobs:
+  - name: migrate
+    kind: PRE_DEPLOY
+    github:
+      repo: UralbekXD/esdp
+      branch: main
+      deploy_on_push: true
+    run_command: python manage.py migrate
